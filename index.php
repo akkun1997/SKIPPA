@@ -1,12 +1,12 @@
 <?php
 	require_once __DIR__ . '/header.php';
 ?>
-	<from method = "POST">
+	<form method = "POST">
 		<table>
 				<td>場所を貸す</td>
 				<td>場所を借りる</td>
 		</table>
-	</from> 
+	</form> 
 
 <?php
 	require_once __DIR__ . '/footer.php';
