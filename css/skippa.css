@@ -45,7 +45,7 @@ a:active{
   padding-right: 20px;
 }
 
-/* トップ画面（index.php）の３つのジャンルを横一列に表示する */ 
+/* トップ画面（index.php）の３つのジャンルを横一列に表示する */
 .topnavi {
   display: table;
   table-layout: fixed;

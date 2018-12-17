@@ -6,7 +6,7 @@
 				<td>場所を貸す</td>
 				<td>場所を借りる</td>
 		</table>
-	</from> 
+	</from>
 
 <?php
 	require_once __DIR__ . '/footer.php';
