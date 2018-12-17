@@ -3,10 +3,8 @@
 ?>
 	<from method = "POST">
 		<table>
-			
 				<td>場所を貸す</td>
 				<td>場所を借りる</td>
-			
 		</table>
 	</from> 
 

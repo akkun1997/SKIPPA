@@ -1,0 +1,42 @@
+﻿# データベースskippaの作成
+set names utf8;
+drop database if exists skippa;
+create database skippa character set utf8 collate utf8_general_ci;
+
+# ユーザーuserに、パスワードabbを設定し、データベースskippaに対するすべての権限を付与
+grant all privileges on skippa.* to user@localhost identified by 'abb';
+
+# データベースskippaを使用する
+use skippa;
+
+# テーブルArticleの作成(物件情報DB)
+create table Article(
+	ident	int auto_increment primary key,
+	userId	varchar(50) not null,
+	zip	varchar(7),
+	address varchar(50),
+	price	int,
+	genre	varchar(20),
+	period	varchar(20),
+	image	varchar(20)
+	
+);
+
+
+# ユーザーテーブルusersの作成
+drop table if exists users;
+create table users(
+ 	userId		varchar(50) primary key,
+	userName	varchar(50) not null,
+	kana	        varchar(50) not null,
+	zip           	char(7) default '',
+	address		varchar(50) default '',
+	tel		varchar(20) default '',
+	license		varchar(50),
+	password	varchar(20)
+);
+
+# テーブルusersへデータを入力
+insert into users(userId, userName, kana, zip, address, tel,license, password)
+ values('kobe@denshi.net', '神戸　電子', 'コウベ　デンシ', '6500002', '神戸市中央区北野町1-1-8',
+ '078-242-0014', 'menkyo.img','kobedenshi');

@@ -35,13 +35,15 @@ $http_host = '//' . $_SERVER['SERVER_NAME'];
 
 //ヘッダー、フッターで使用するリンクのURLを用意する
 $index_php = $http_host.'/'.'SKIPPA/index.php';
-$skippaInfo_php = $http_host . '/' . 'SKIPPA/skippaInfo.php'; //SKIPPAについてのインフォ画面
+$skippaInfo_php = $http_host . '/' . 'SKIPPA/Info/skippaInfo.php'; //SKIPPAについてのインフォ画面
 $search_php = $http_host . '/' . 'SKIPPA/Lessee/search.php';//検索画面
 $entryArticle_php = $http_host . '/' . 'SKIPPA/Lessor/entryArticle.php';//検索結果一覧画面
 //物件登録画面
 //物件詳細画面
 //契約画面
-$login_php = $http_host . '/' . 'SKIPPA/user/login.php';//マイページ画面//ログイン画面
+$login_php = $http_host . '/' . 'SKIPPA/user/login.php';//ログイン画面
+$logout_php = $http_host . '/' . 'SKIPPA/user/logout.php';//ログアウト画面
+$signup_php = $http_host . '/' . 'SKIPPA/user/sign_up.php';
 $mypage_php = $http_host . '/' . 'SKIPPA/user/mypage.php';//マイページ画面
 
 //CSSファイルを用意する
