@@ -10,8 +10,7 @@
 
 
 
-    <a href="mypage.php">変更する</a>
-    <p align="right"><a href = "mypage.php">戻る</a></p>
+    <a href="mypage.php" class = "square_btn">変更する</a>
 </body>
 <?php
 	require_once __DIR__ . '/../footer.php';
