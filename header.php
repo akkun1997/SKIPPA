@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class = "main">
-		<h2><a href = "<?= $index_php ?>">ようこそ！SKIPPAへ</a></h2>
+		<h1><a href = "<?= $index_php ?>" class="">ようこそ！SKIPPAへ</a></h1>
 		<P><?= $userName ?>さん</P>
 		<ui class = "navi">
 			<li><a href = "<?= $index_php ?>">トップページ</a></li>
