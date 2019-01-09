@@ -37,7 +37,7 @@ $http_host = '//' . $_SERVER['SERVER_NAME'];
 $index_php = $http_host.'/'.'SKIPPA/index.php';
 $skippaInfo_php = $http_host . '/' . 'SKIPPA/Info/skippaInfo.php'; //SKIPPAについてのインフォ画面
 $search_php = $http_host . '/' . 'SKIPPA/Lessee/search.php';//検索画面
-$entryArticle_php = $http_host . '/' . 'SKIPPA/Lessor/entryArticle.php';//検索結果一覧画面
+$entryCategory_php = $http_host . '/' . 'SKIPPA/Lessor/entryCategory.php';//検索結果一覧画面
 //物件登録画面
 //物件詳細画面
 //契約画面
