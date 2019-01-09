@@ -11,13 +11,16 @@ if(!isset($_SESSION)){
 //セッション情報としてユーザーID、名前が保持されているならそれを取得する
 $userId = isset($_SESSION['userId']) ? $_SESSION['userId']:'';
 $userName = isset($_SESSION['userName']) ? $_SESSION['userName']:'';
+$tel = isset($_SESSION['tel']) ? $_SESSION['tel']:'';
+
 
 //セッション情報にユーザーID、名前が保持されていない場合
-if(empty($userId) || empty($userName)){
+if(empty($userId) || empty($userName) || empty($tel)){
 	//クッキーにユーザーID、名前が保持されているなら、それを取得する
-	if(isset($_COOKIE['userId']) && isset($_COOKIE['userName'])){
+	if(isset($_COOKIE['userId']) && isset($_COOKIE['userName']) && isset($_COOKIE['tel'])){
 		$uerId = $_COOKIE['userId'];
 		$userName = $_COOKIE['userName'];
+		$tel = $_COOKIE['tel'];
 	}else{
 		$userId = (string)mt_rand(10000000,99999999);
 		$userName = 'ゲスト';
@@ -28,6 +31,7 @@ if(empty($userId) || empty($userName)){
 	//以上で決定したユーザーID、名前をセッション情報として保持する。
 	$_SESSION['userId'] = $userId;
 	$_SESSION['userName'] = $userName;
+	$_SESSION['tel'] = $tel;
 }
 
 //ヘッダー、フッターで使用するリンクのFQDN作成の準備
@@ -44,7 +48,7 @@ $entryCategory_php = $http_host . '/' . 'SKIPPA/Lessor/entryCategory.php';//検�
 $login_php = $http_host . '/' . 'SKIPPA/user/login.php';//ログイン画面
 $logout_php = $http_host . '/' . 'SKIPPA/user/logout.php';//ログアウト画面
 $signup_php = $http_host . '/' . 'SKIPPA/user/sign_up.php';
-$mypage_php = $http_host . '/' . 'SKIPPA/user/mypage.php';//マイページ画面
+$mypage_php = $http_host . '/' . 'SKIPPA/mypage/mypage.php';//マイページ画面
 
 //CSSファイルを用意する
 $skippa_css = $http_host . '/' . 'SKIPPA/css/skippa.css';
