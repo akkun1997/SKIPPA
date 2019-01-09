@@ -44,7 +44,7 @@ $entryArticle_php = $http_host . '/' . 'SKIPPA/Lessor/entryArticle.php';//検索
 $login_php = $http_host . '/' . 'SKIPPA/user/login.php';//ログイン画面
 $logout_php = $http_host . '/' . 'SKIPPA/user/logout.php';//ログアウト画面
 $signup_php = $http_host . '/' . 'SKIPPA/user/sign_up.php';
-$mypage_php = $http_host . '/' . 'SKIPPA/user/mypage.php';//マイページ画面
+$mypage_php = $http_host . '/' . 'SKIPPA/mypage/mypage.php';//マイページ画面
 
 //CSSファイルを用意する
 $skippa_css = $http_host . '/' . 'SKIPPA/css/skippa.css';
