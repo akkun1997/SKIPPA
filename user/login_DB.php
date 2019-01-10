@@ -44,5 +44,5 @@
 	<p>こんにちは、<?= $userName ?>さん。</p>
 	<p>ショッピングをお楽しみください。</p>
 	<?php
-		require_once __DIR__ . '/../footer.php';
+		header('Location:' .$index_php);
 	?>
