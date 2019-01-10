@@ -1,4 +1,4 @@
-﻿# データベースskippaの作成
+# データベースskippaの作成
 set names utf8;
 drop database if exists skippa;
 create database skippa character set utf8 collate utf8_general_ci;
@@ -12,53 +12,53 @@ use skippa;
 # ユーザーテーブルusersの作成
 drop table if exists users;
 create table users(
- 	userId		varchar(50) primary key,　　	#ユーザID(メアド)
-	userName	varchar(20) not null,		#ユーザの名前
-	kana	        varchar(50) not null,		#フリガナ
-	nickName	varchar(20),			#サイト上に表示するニックネーム
-	age		int(3),				#年齢
-	zip           	char(7) default '',		#郵便番号
-	address		varchar(50) default '',		#住所
-	tel		varchar(20) default '',		#電話番号
-	license		varchar(50),			#身分証明証
-	password	varchar(20)			#パスワード
+ 	userId 		varchar(50) primary key,	#ユーザID(メアド)
+	userName 	varchar(20) not null,		#ユーザの名前
+	kana 		varchar(50) not null,		#フリガナ
+	nickName 	varchar(20),			#サイト上に表示するニックネーム
+	age 		int(3),				#年齢
+	zip 		int(7),				#郵便番号
+	address 	varchar(50),			#住所
+	tel 		varchar(20),			#電話番号
+	license 	varchar(50),			#身分証明証
+	password 	varchar(20)			#パスワード
 );
 
 # 物件登録(部屋)テーブルRoomの作成
 create table Room(
-	userId		varchar(50) primary key,　　	#ユーザID(メアド)
-	zip           	char(7) default '',		#郵便番号
-	address		varchar(50) default '',		#住所
-	startPeriod	date,				#貸出期間
-	endPeriod	date,				#貸出期間
-	price		int(20),			#料金
-	image		char(20)			#画像
+	userId 		varchar(50) primary key,	#ユーザID(メアド)
+	zip 		int(7),				#郵便番号
+	address 	varchar(50),			#住所
+	startPeriod 	date,				#貸出期間
+	endPeriod 	date,				#貸出期間
+	price 		int(20),			#料金
+	image 		varchar(20)			#画像
 	#広さ(何畳など)
-)
+);
 
 # 物件登録(駐車場)テーブルParkingLotの作成
 create table ParkingLot(
-	userId		varchar(50) primary key,　　	#ユーザID(メアド)
-	zip           	char(7) default '',		#郵便番号
-	address		varchar(50) default '',		#住所
-	startPeriod	date,				#貸出期間
-	endPeriod	date,				#貸出期間
-	price		int(20),			#料金
-	image		char(20)			#画像
+	userId 		varchar(50) primary key,	#ユーザID(メアド)
+	zip 		int(7),				#郵便番号
+	address 	varchar(50),			#住所
+	startPeriod 	date,				#貸出期間
+	endPeriod 	date,				#貸出期間
+	price 		int(20),			#料金
+	image 		varchar(20)			#画像
 	#大きさ(駐車可能な車種や大きさ)
-)
+);
 
 # 物件登録(庭)テーブルGardenの作成
 create table Garden(
-	userId		varchar(50) primary key,　　	#ユーザID(メアド)
-	zip           	char(7) default '',		#郵便番号
-	address		varchar(50) default '',		#住所
-	startPeriod	date,				#貸出期間
-	endPeriod	date,				#貸出期間
-	price		int(20),			#料金
-	image		char(20),			#画像
-	purpose		char(100)			#使用例の記載
-)
+	userId 		varchar(50) primary key,	#ユーザID(メアド)
+	zip 		int(7),				#郵便番号
+	address 	varchar(50),			#住所
+	startPeriod 	date,				#貸出期間
+	endPeriod 	date,				#貸出期間
+	price 		int(20),			#料金
+	image 		varchar(20),			#画像
+	purpose 	varchar(100)			#使用例の記載
+);
 
 # テーブルusersへデータを入力
 insert into users(userId, userName, kana, nickName, age,  zip, address, tel,license, password)
@@ -66,13 +66,13 @@ insert into users(userId, userName, kana, nickName, age,  zip, address, tel,lice
  '078-242-0014', 'menkyo.img','kobedenshi');
 
 # テーブルRoomへデータを入力
-insert into Room(userId, zip, address, startPriod, endPriod, price, image)
+insert into Room(userId, zip, address, startPeriod, endPeriod, price, image)
  values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '2000', 'sampleRoom.jpg');
 
 # テーブルParkingLotへデータを入力
-insert into ParkingLot(userId, zip, address, startPriod, endPriod, price, image)
+insert into ParkingLot(userId, zip, address, startPeriod, endPeriod, price, image)
  values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '1000', 'sampleParking.jpg');
 
 # テーブルGardenへデータを入力
-insert into Garden(userId, zip, address, startPriod, endPriod, price, image, purpose)
- values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg');
+insert into Garden(userId, zip, address, startPeriod, endPeriod, price, image, purpose)
+ values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg', 'あおかｎ');
