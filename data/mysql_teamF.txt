@@ -66,13 +66,13 @@ insert into users(userId, userName, kana, nickName, age,  zip, address, tel,lice
  '078-242-0014', 'menkyo.img','kobedenshi');
 
 # テーブルRoomへデータを入力
-insert into Room(userId, zip, address, startPriod, endPriod, price, image)
+insert into Room(userId, zip, address, startPeriod, endPeriod, price, image)
  values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '2000', 'sampleRoom.jpg');
 
 # テーブルParkingLotへデータを入力
-insert into ParkingLot(userId, zip, address, startPriod, endPriod, price, image)
+insert into ParkingLot(userId, zip, address, startPeriod, endPeriod, price, image)
  values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '1000', 'sampleParking.jpg');
 
 # テーブルGardenへデータを入力
-insert into Garden(userId, zip, address, startPriod, endPriod, price, image, purpose)
- values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg');
+insert into Garden(userId, zip, address, startPeriod, endPeriod, price, image, purpose)
+ values('kobe@denshi.net', '1234567' , '神戸市ちんこ町', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg', 'あおかｎ');
