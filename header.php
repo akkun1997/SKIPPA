@@ -18,7 +18,7 @@
 			<li>|</li>
 			<li><a href = "<?= $search_php ?>">検索画面</a></li>
 			<li>|</li>
-			<li><a href = "<?= $entryArticle_php ?>">物件登録</a></li>
+			<li><a href = "<?= $entryCategory_php ?>">物件登録</a></li>
 			<li>|</li>
 			<li><a href = "<?= $skippaInfo_php ?>">SKIPPAとは</a></li>
 			<li>|</li>
