@@ -11,8 +11,11 @@ if(!isset($_SESSION)){
 //セッション情報としてユーザーID、名前が保持されているならそれを取得する
 $userId = isset($_SESSION['userId']) ? $_SESSION['userId']:'';
 $userName = isset($_SESSION['userName']) ? $_SESSION['userName']:'';
+$kana = isset($_SESSION['kana']) ? $_SESSION['kana']:'';
 $nickName = isset($_SESSION['nickName']) ? $_SESSION['nickName']:'';
 $tel = isset($_SESSION['tel']) ? $_SESSION['tel']:'';
+$zip = isset($_SESSION['zip']) ? $_SESSION['zip']:'';
+$address = isset($_SESSION['address']) ? $_SESSION['address']:'';
 
 //セッション情報にユーザーID、名前が保持されていない場合
 if(empty($userId) || empty($userName) || empty($tel)){
@@ -51,7 +54,7 @@ $entryCategory_php = $http_host . '/' . 'SKIPPA/Lessor/entryCategory.php';//検�
 $login_php = $http_host . '/' . 'SKIPPA/user/login.php';//ログイン画面
 $logout_php = $http_host . '/' . 'SKIPPA/user/logout.php';//ログアウト画面
 $signup_php = $http_host . '/' . 'SKIPPA/user/sign_up.php';
-$mypage_php = $http_host . '/' . 'SKIPPA/mypage/mypage.php';//マイページ画面
+$mypage_php = $http_host . '/' . 'SKIPPA/mypage/mypage_user.php';
 
 //CSSファイルを用意する
 $skippa_css = $http_host . '/' . 'SKIPPA/css/skippa.css';

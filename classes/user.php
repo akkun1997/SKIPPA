@@ -32,9 +32,9 @@
           }
       }
 
-      public function updateUser($userId,$userName,$kana,$nickName,$zip,$address,$tel,$license,$password,$tempId){
-          $sql = "update users set userId=?,userName=?,kana=?,nickName=?,zip=?,address=?,tel=?,license=?,password=? where userId=?";
-          $result=$this->exec($sql,[$userId,$userName,$kana,$nickName,$zip,$address,$tel,$license,$password,$tempId]);
+      public function updateUser($userId,$userName,$kana,$nickName,$zip,$address,$tel,$tempId){
+          $sql = "update users set userId=?,userName=?,kana=?,nickName=?,zip=?,address=?,tel=? where userId=?";
+          $result=$this->exec($sql,[$userId,$userName,$kana,$nickName,$zip,$address,$tel,$tempId]);
 
           /*if($result){
             //更新に成功したが、Cart内に仮のユーザーIDの商品が入っていた場合、新しいユーザーIDに置き換えるまた、過去の注文履歴のユーザーIDも新しいものに置き換える
