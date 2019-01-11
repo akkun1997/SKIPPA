@@ -3,8 +3,8 @@
 ?>
 	<form method = "POST">
 		<table>
-				<td>場所を貸す</td>
-				<td>場所を借りる</td>
+				<td><input type="button" name="host" value="場所を貸す"></td>
+				<td><input type="button" name="client" value="場所を借りる"></td>
 		</table>
 	</form> 
 
