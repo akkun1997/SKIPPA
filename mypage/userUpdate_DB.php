@@ -20,6 +20,7 @@
 	$zip = h($_POST['newZip']);
 	$address = h($_POST['newAddress']);
 	$tel = h($_POST['newTel']);
+	$license = h($_POST['newLicense']);
 
 	//バリデーションはメアドと郵便番号のみとする
 	//メアドのバリデーションはfilter_var()を使い、RFCに準拠しないメアドはエラーとする

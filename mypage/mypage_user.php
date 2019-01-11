@@ -22,6 +22,7 @@
         <tr><td>電話番号</td><td><input type="text" name="newTel" value="<?=$tel?>" required></td></tr>
         <tr><td>郵便番号</td><td><input type="text" name="newZip" value="<?=$zip?>" required></td></tr>
         <tr><td>住所</td><td><input type="text" name="newAddress" value="<?=$address?>" required></td></tr>
+        <tr><td>身分証明証</td><td><input type="text" name="newLicense" value="<?=$license?>" required></td></tr>
     </table>
 
     <input type = "submit" value = "変更する" class = "square_btn">

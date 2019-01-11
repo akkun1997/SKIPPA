@@ -35,6 +35,7 @@
 	$_SESSION['zip'] = $result['zip'];
 	$_SESSION['address'] = $result['address'];
 	$_SESSION['tel'] = $result['tel'];
+	$_SESSION['license'] = $result['license'];
 
 	//ユーザーIDと名前をクッキーに保存する(有効期限は2週間)
 	setcookie("userId",$userId,time() + 60*60*24*14,'/');

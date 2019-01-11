@@ -1,8 +1,9 @@
-﻿/* ページ全体を中央に表示（センタリング）するには、
+/* ページ全体を中央に表示（センタリング）するには、
    ページ全体である<body>～</body>の中に<div>～</div>を入れ、
    その<div>～</div>を中央に表示する。
    次のbodyと#mainの2つの設定で実装される。
 */
+
 
 /* body要素内の文字列をセンタリング */
 body {
@@ -45,7 +46,7 @@ a:active{
   padding-right: 20px;
 }
 
-/* トップ画面（index.php）の３つのジャンルを横一列に表示する */ 
+/* トップ画面（index.php）の３つのジャンルを横一列に表示する */
 .topnavi {
   display: table;
   table-layout: fixed;
@@ -165,6 +166,11 @@ img.mini_img {
   height: 100%;
 }
 
+.float img{
+  float: left;
+  padding-right: 1em;
+}
+
 /* 画像データのサイズを60%に ・・ detail.phpで使用*/
 img.detail_img {
   width: 40%;
@@ -185,40 +191,3 @@ img.detail_img {
 .td_item_total {
   width: 120px;
 }
-
-.square_btn{
-  display: inline-block;
-  padding: 0.5em 1em;
-  text-decoration: none;
-  background: #668ad8;/*ボタン色*/
-  color: #FFF;
-  border-bottom: solid 4px #627295;
-  border-radius: 3px;
-}
-
-.square_btn:active {/*ボタンを押したとき*/
-  -ms-transform: translateY(4px);
-  -webkit-transform: translateY(4px);
-  transform: translateY(4px);/*下に動く*/
-  border-bottom: none;/*線を消す*/
-}
-
-h1{
-  position: relative;
-  background: #66FF33;
-  box-shadow: 0px 0px 0px 5px #66FF33;
-  border: dashed 2px white;
-  padding: 0.2em 0.5em;
-  color: #454545;
-  }
-  
-  h1:after{
-  position: absolute;
-  content: '';
-  left: -7px;
-  top: -7px;
-  border-width: 0 0 15px 15px;
-  border-style: solid;
-  border-color: #fff #fff #66FF33;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.15);
-  }

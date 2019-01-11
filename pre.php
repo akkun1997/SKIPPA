@@ -16,6 +16,7 @@ $nickName = isset($_SESSION['nickName']) ? $_SESSION['nickName']:'';
 $tel = isset($_SESSION['tel']) ? $_SESSION['tel']:'';
 $zip = isset($_SESSION['zip']) ? $_SESSION['zip']:'';
 $address = isset($_SESSION['address']) ? $_SESSION['address']:'';
+$license = isset($_SESSION['license']) ? $_SESSION['license']:'';
 
 //セッション情報にユーザーID、名前が保持されていない場合
 if(empty($userId) || empty($userName) || empty($tel)){
