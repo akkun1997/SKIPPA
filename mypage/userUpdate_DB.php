@@ -26,14 +26,14 @@
 	//メアドのバリデーションはfilter_var()を使い、RFCに準拠しないメアドはエラーとする
 	if(!filter_var($userId,FILTER_VALIDATE_EMAIL)){
 		$_SESSION['signup_error'] = '正しいメールアドレスを入力して下さい';
-		header("Location:" .$mypage_php);
+		header("Location:" .$mypageUser_php);
 		exit();
 	}
 
 	//郵便番号は半角数字の7桁かどうかのチェック
 	if(!is_numeric($zip) || strlen($zip) != 7){
 		$_SESSION['signup_error'] = '正しい郵便番号を入力して下さい';
-		header("Location:" .$mypage_php);
+		header("Location:" .$mypageUser_php);
 		exit();	
 	}
 

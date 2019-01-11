@@ -55,7 +55,7 @@ $entryCategory_php = $http_host . '/' . 'SKIPPA/Lessor/entryCategory.php';//検�
 $login_php = $http_host . '/' . 'SKIPPA/user/login.php';//ログイン画面
 $logout_php = $http_host . '/' . 'SKIPPA/user/logout.php';//ログアウト画面
 $signup_php = $http_host . '/' . 'SKIPPA/user/sign_up.php';
-$mypage_php = $http_host . '/' . 'SKIPPA/mypage/mypage_user.php';
-
+$mypage_php = $http_host . '/' . 'SKIPPA/mypage/mypage.php';
+$mypageUser_php = $http_host . '/' . 'SKIPPA/mypage/mypage_user.php';
 //CSSファイルを用意する
 $skippa_css = $http_host . '/' . 'SKIPPA/css/skippa.css';
