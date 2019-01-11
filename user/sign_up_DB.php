@@ -32,7 +32,7 @@
 	if(!is_numeric($zip) || strlen($zip) != 7){
 		$_SESSION['signup_error'] = '正しい郵便番号を入力して下さい';
 		header("Location:" .$signup_php);
-		exit();	
+		exit();
 	}
 
 	//Userオブジェクトを生成し、ユーザー登録処理を行うsignUp()メソッドを呼び出し、結果を受け取る
