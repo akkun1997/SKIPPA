@@ -11,8 +11,8 @@ if(!isset($_SESSION)){
 //セッション情報としてユーザーID、名前が保持されているならそれを取得する
 $userId = isset($_SESSION['userId']) ? $_SESSION['userId']:'';
 $userName = isset($_SESSION['userName']) ? $_SESSION['userName']:'';
+$nickName = isset($_SESSION['nickName']) ? $_SESSION['nickName']:'';
 $tel = isset($_SESSION['tel']) ? $_SESSION['tel']:'';
-
 
 //セッション情報にユーザーID、名前が保持されていない場合
 if(empty($userId) || empty($userName) || empty($tel)){
@@ -20,10 +20,12 @@ if(empty($userId) || empty($userName) || empty($tel)){
 	if(isset($_COOKIE['userId']) && isset($_COOKIE['userName']) && isset($_COOKIE['tel'])){
 		$uerId = $_COOKIE['userId'];
 		$userName = $_COOKIE['userName'];
+		$nickName = $_COOKIE['nickName'];
 		$tel = $_COOKIE['tel'];
 	}else{
 		$userId = (string)mt_rand(10000000,99999999);
 		$userName = 'ゲスト';
+		$nickName = 'ゲスト';
 		setcookie("userId",$userId,time() + 60*60*24*14,'/');
 		setcookie("userName",$userName,time() + 60*60*24*14,'/');
 	}
@@ -31,6 +33,7 @@ if(empty($userId) || empty($userName) || empty($tel)){
 	//以上で決定したユーザーID、名前をセッション情報として保持する。
 	$_SESSION['userId'] = $userId;
 	$_SESSION['userName'] = $userName;
+	$_SESSION['nickName'] = $nickName;
 	$_SESSION['tel'] = $tel;
 }
 
