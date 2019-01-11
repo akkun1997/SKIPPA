@@ -11,14 +11,14 @@
 </head>
 <body>
 	<div class = "main">
-		<h2><a href = "<?= $index_php ?>">ようこそ！SKIPPAへ</a></h2>
-		<P><?= $userName ?>さん</P>
+		<h1><a href = "<?= $index_php ?>" class="">SKIPPA</a></h1>
+		<P>ようこそ！<?= $nickName ?>さん</P>
 		<ui class = "navi">
 			<li><a href = "<?= $index_php ?>">トップページ</a></li>
 			<li>|</li>
 			<li><a href = "<?= $search_php ?>">検索画面</a></li>
 			<li>|</li>
-			<li><a href = "<?= $entryArticle_php ?>">物件登録</a></li>
+			<li><a href = "<?= $entryCategory_php ?>">物件登録</a></li>
 			<li>|</li>
 			<li><a href = "<?= $skippaInfo_php ?>">SKIPPAとは</a></li>
 			<li>|</li>

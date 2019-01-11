@@ -31,6 +31,7 @@
 	$_SESSION['userId'] = $userId;
 	$_SESSION['userName'] = $userName;
 	$_SESSION['kana'] = $result['kana'];
+	$_SESSION['nickName'] = $result['nickName'];
 	$_SESSION['zip'] = $result['zip'];
 	$_SESSION['address'] = $result['address'];
 	$_SESSION['tel'] = $result['tel'];
@@ -44,5 +45,5 @@
 	<p>こんにちは、<?= $userName ?>さん。</p>
 	<p>ショッピングをお楽しみください。</p>
 	<?php
-		require_once __DIR__ . '/../footer.php';
+		header('Location:' .$index_php);
 	?>
