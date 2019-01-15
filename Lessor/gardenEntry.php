@@ -10,6 +10,11 @@ if($_SESSION['userName']==="ゲスト"){
 <?php
 	require_once __DIR__ . '/../header.php';
 
+	if(isset($_SESSION['signup_error'])){
+    echo '<p class="error_class">'.$_SESSION['signup_error'].'</p>';
+    unset($_SESSION['signup_error']);
+  }
+
 ?>
 
   <p>庭で登録中です</p>
