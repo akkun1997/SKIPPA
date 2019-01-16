@@ -1,0 +1,78 @@
+# データベースskippaの作成
+set names utf8;
+drop database if exists skippa;
+create database skippa character set utf8 collate utf8_general_ci;
+
+# ユーザーuserに、パスワードabbを設定し、データベースskippaに対するすべての権限を付与
+grant all privileges on skippa.* to user@localhost identified by 'abb';
+
+# データベースskippaを使用する
+use skippa;
+
+# ユーザーテーブルusersの作成
+create table users(
+ 	userId 		varchar(50) primary key,
+	userName 	varchar(20) not null,
+	kana 		varchar(50) not null,
+	nickName 	varchar(20),
+	age 		int(3),
+	zip 		int(7),
+	address 	varchar(50),
+	tel 		varchar(20),
+	license 	varchar(50),
+	password 	varchar(20)
+);
+
+# 物件登録(部屋)テーブルRoomの作成
+create table Room(
+	userId 		varchar(50) primary key,
+	zip 		int(7),
+	address 	varchar(50),
+	startPeriod 	date,
+	endPeriod 	date,
+	price 		int(20),
+	image 		varchar(20)
+
+);
+
+# 物件登録(駐車場)テーブルParkingLotの作成
+create table ParkingLot(
+	userId 		varchar(50) primary key,
+	zip 		int(7),
+	address 	varchar(50),
+	startPeriod 	date,
+	endPeriod 	date,
+	price 		int(20),
+	image 		varchar(20)
+
+);
+
+# 物件登録(庭)テーブルGardenの作成
+create table Garden(
+  ident	int auto_increment primary key,
+	userId 		varchar(50),
+	zip 		  char(7) default '',
+	address 	varchar(50) default '',
+	startPeriod 	date,
+	endPeriod 	date,
+	price 		int,
+	image 		varchar(20),
+	purpose 	varchar(100)
+);
+
+# テーブルusersへデータを入力
+insert into users(userId, userName, kana, nickName, age,  zip, address, tel,license, password)
+ values('kobe@denshi.net', '神戸　電子', 'コウベ　デンシ', 'こうちゃん', '20', '6500002', '神戸市中央区北野町1-1-8',
+ '078-242-0014', 'menkyo.img','kobedenshi');
+
+# テーブルRoomへデータを入力
+insert into Room(userId, zip, address, startPeriod, endPeriod, price, image)
+ values('kobe@denshi.net', '1234567' , '神戸市', '2019-4-21', '2019-4-24', '2000', 'sampleRoom.jpg');
+
+# テーブルParkingLotへデータを入力
+insert into ParkingLot(userId, zip, address, startPeriod, endPeriod, price, image)
+ values('kobe@denshi.net', '1234567' , '神戸市', '2019-4-21', '2019-4-24', '1000', 'sampleParking.jpg');
+
+# テーブルGardenへデータを入力
+insert into Garden(userId, zip, address, startPeriod, endPeriod, price, image, purpose)
+ values('kobe@denshi.net', '1234567' , '神戸市', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg', 'あおかｎ');

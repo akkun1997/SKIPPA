@@ -10,9 +10,9 @@ if($_SESSION['userName']==="ゲスト"){
 <?php
 	require_once __DIR__ . '/../header.php';
 
-	if(isset($_SESSION['signup_error'])){
-    echo '<p class="error_class">'.$_SESSION['signup_error'].'</p>';
-    unset($_SESSION['signup_error']);
+	if(isset($_SESSION['gardenUp_error'])){
+    echo '<p class="error_class">'.$_SESSION['gardenUp_error'].'</p>';
+    unset($_SESSION['gardenUp_error']);
   }
 
 ?>
@@ -25,12 +25,12 @@ if($_SESSION['userName']==="ゲスト"){
     		<tr><td>住所</td><td><input type="text" name="address" ></td></tr>
     		<tr><td>貸出期間</td><td><input type="date"  name="startPeriod"  max="9999-12-31">
 				~
-				<input type="date" name="lastPeriod" max="9999-12-31"></td></tr>
-    		<tr><td>料金(1時間単位)</td><td><input type="text" name="kane"></td></tr>
-        <tr><td>写真</td><td><input type="file" name="gazou"></td></tr>
+				<input type="date" name="endPeriod" max="9999-12-31"></td></tr>
+    		<tr><td>料金(1時間単位)</td><td><input type="text" name="price"></td></tr>
+        <tr><td>写真</td><td><input type="file" name="image"></td></tr>
         <tr><td colspan="2"><input type="submit" value="送信"></td></tr>
     </table>
-
+</form>
     <?php
     	require_once __DIR__ . '/../footer.php';
     ?>
