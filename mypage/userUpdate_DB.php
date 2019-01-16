@@ -20,21 +20,37 @@
 	$zip = h($_POST['newZip']);
 	$address = h($_POST['newAddress']);
 	$tel = h($_POST['newTel']);
-	$license = h($_POST['newLicense']);
+	$license = h($_FILES['newLicense']['name']);
 
 	//バリデーションはメアドと郵便番号のみとする
 	//メアドのバリデーションはfilter_var()を使い、RFCに準拠しないメアドはエラーとする
 	if(!filter_var($userId,FILTER_VALIDATE_EMAIL)){
-		$_SESSION['signup_error'] = '正しいメールアドレスを入力して下さい';
+		$_SESSION['update_error'] = '正しいメールアドレスを入力して下さい';
 		header("Location:" .$mypageUser_php);
 		exit();
 	}
 
 	//郵便番号は半角数字の7桁かどうかのチェック
 	if(!is_numeric($zip) || strlen($zip) != 7){
-		$_SESSION['signup_error'] = '正しい郵便番号を入力して下さい';
+		$_SESSION['update_error'] = '正しい郵便番号を入力して下さい';
 		header("Location:" .$mypageUser_php);
 		exit();	
+	}
+
+	//画像ファイルを保存する
+	$filedir = "C:/xampp/htdocs/SKIPPA/LicenseImg/";
+	if(is_uploaded_file($_FILES["newLicense"]["tmp_name"])){
+
+		if(move_uploaded_file($_FILES["newLicense"]["tmp_name"],$filedir.$_FILES["newLicense"]["name"])){
+		}else{
+			$_SESSION['update_error'] = 'ファイルをアップデートできません';
+			header("Location:" .$mypageUser_php);
+			exit();
+		}
+	}else{
+			$_SESSION['update_error'] = 'ファイルが選択されていません';
+			header("Location:" .$mypageUser_php);
+			exit();
 	}
 
 	require_once __DIR__ . '/../classes/user.php';
@@ -48,6 +64,7 @@
 	$_SESSION['nickName'] = $nickName;
 	$_SESSION['zip'] = $zip;
 	$_SESSION['address'] = $address;
+	$_SESSION['license'] = $license;
 	$_SESSION['tel'] = $tel;
 
 	//ユーザーIDと名前をクッキーに保存する(期限は二週間)

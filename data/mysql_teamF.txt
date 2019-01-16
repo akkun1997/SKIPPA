@@ -1,78 +1,82 @@
-# ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹skippaã®ä½œæˆ
+# ƒf[ƒ^ƒx[ƒXskippa‚Ìì¬
 set names utf8;
 drop database if exists skippa;
 create database skippa character set utf8 collate utf8_general_ci;
 
-# ãƒ¦ãƒ¼ã‚¶ãƒ¼userã«ã€ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰abbã‚’è¨­å®šã—ã€ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹skippaã«å¯¾ã™ã‚‹ã™ã¹ã¦ã®æ¨©é™ã‚’ä»˜ä¸
+# ƒ†[ƒU[user‚ÉAƒpƒXƒ[ƒhabb‚ğİ’è‚µAƒf[ƒ^ƒx[ƒXskippa‚É‘Î‚·‚é‚·‚×‚Ä‚ÌŒ ŒÀ‚ğ•t—^
 grant all privileges on skippa.* to user@localhost identified by 'abb';
 
-# ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹skippaã‚’ä½¿ç”¨ã™ã‚‹
+# ƒf[ƒ^ƒx[ƒXskippa‚ğg—p‚·‚é
 use skippa;
 
-# ãƒ¦ãƒ¼ã‚¶ãƒ¼ãƒ†ãƒ¼ãƒ–ãƒ«usersã®ä½œæˆ
+# ƒ†[ƒU[ƒe[ƒuƒ‹users‚Ìì¬
+drop table if exists users;
 create table users(
- 	userId 		varchar(50) primary key,
-	userName 	varchar(20) not null,
-	kana 		varchar(50) not null,
-	nickName 	varchar(20),
-	age 		int(3),
-	zip 		int(7),
-	address 	varchar(50),
-	tel 		varchar(20),
-	license 	varchar(50),
-	password 	varchar(20)
+	ident int auto_increment primary key,
+ 	userId		varchar(50),			#ƒ†[ƒUID(ƒƒAƒh)
+	userName	varchar(20) not null,		#ƒ†[ƒU‚Ì–¼‘O
+	kana	        varchar(50) not null,		#ƒtƒŠƒKƒi
+	nickName	varchar(20),			#ƒTƒCƒgã‚É•\¦‚·‚éƒjƒbƒNƒl[ƒ€
+	age		int(3),				#”N—î
+	zip           	char(7) default '',		#—X•Ö”Ô†
+	address		varchar(50) default '',		#ZŠ
+	tel		varchar(20) default '',		#“d˜b”Ô†
+	license		varchar(50),			#g•ªØ–¾Ø
+	password	varchar(20)			#ƒpƒXƒ[ƒh
 );
 
-# ç‰©ä»¶ç™»éŒ²(éƒ¨å±‹)ãƒ†ãƒ¼ãƒ–ãƒ«Roomã®ä½œæˆ
+# •¨Œ“o˜^(•”‰®)ƒe[ƒuƒ‹Room‚Ìì¬
 create table Room(
-	userId 		varchar(50) primary key,
-	zip 		int(7),
-	address 	varchar(50),
-	startPeriod 	date,
-	endPeriod 	date,
-	price 		int(20),
-	image 		varchar(20)
-
+	ident int auto_increment primary key,
+	userId		varchar(50),			#ƒ†[ƒUID(ƒƒAƒh)
+	zip           	char(7) default '',		#—X•Ö”Ô†
+	address		varchar(50) default '',		#ZŠ
+	startPeriod	date,				#‘İoŠúŠÔ
+	endPeriod	date,				#‘İoŠúŠÔ
+	price		int(20),			#—¿‹à
+	image		char(20)			#‰æ‘œ
+	#L‚³(‰½ô‚È‚Ç)
 );
 
-# ç‰©ä»¶ç™»éŒ²(é§è»Šå ´)ãƒ†ãƒ¼ãƒ–ãƒ«ParkingLotã®ä½œæˆ
+# •¨Œ“o˜^(’“Ôê)ƒe[ƒuƒ‹ParkingLot‚Ìì¬
 create table ParkingLot(
-	userId 		varchar(50) primary key,
-	zip 		int(7),
-	address 	varchar(50),
-	startPeriod 	date,
-	endPeriod 	date,
-	price 		int(20),
-	image 		varchar(20)
-
+	ident int auto_increment primary key,
+	userId		varchar(50),			#ƒ†[ƒUID(ƒƒAƒh)
+	zip           	char(7) default '',		#—X•Ö”Ô†
+	address		varchar(50) default '',		#ZŠ
+	startPeriod	date,				#‘İoŠúŠÔ
+	endPeriod	date,				#‘İoŠúŠÔ
+	price		int(20),			#—¿‹à
+	image		char(20)			#‰æ‘œ
+	#‘å‚«‚³(’“Ô‰Â”\‚ÈÔí‚â‘å‚«‚³)
 );
 
-# ç‰©ä»¶ç™»éŒ²(åº­)ãƒ†ãƒ¼ãƒ–ãƒ«Gardenã®ä½œæˆ
+# •¨Œ“o˜^(’ë)ƒe[ƒuƒ‹Garden‚Ìì¬
 create table Garden(
-  ident	int auto_increment primary key,
-	userId 		varchar(50),
-	zip 		  char(7) default '',
-	address 	varchar(50) default '',
-	startPeriod 	date,
-	endPeriod 	date,
-	price 		int,
-	image 		varchar(20),
-	purpose 	varchar(100)
+	ident int auto_increment primary key,
+	userId		varchar(50),			#ƒ†[ƒUID(ƒƒAƒh)
+	zip           	char(7) default '',		#—X•Ö”Ô†
+	address		varchar(50) default '',		#ZŠ
+	startPeriod	date,				#‘İoŠúŠÔ
+	endPeriod	date,				#‘İoŠúŠÔ
+	price		int(20),			#—¿‹à
+	image		char(20),			#‰æ‘œ
+	purpose		char(100)			#g—p—á‚Ì‹LÚ
 );
 
-# ãƒ†ãƒ¼ãƒ–ãƒ«usersã¸ãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›
-insert into users(userId, userName, kana, nickName, age,  zip, address, tel,license, password)
- values('kobe@denshi.net', 'ç¥æˆ¸ã€€é›»å­', 'ã‚³ã‚¦ãƒ™ã€€ãƒ‡ãƒ³ã‚·', 'ã“ã†ã¡ã‚ƒã‚“', '20', '6500002', 'ç¥æˆ¸å¸‚ä¸­å¤®åŒºåŒ—é‡ç”º1-1-8',
- '078-242-0014', 'menkyo.img','kobedenshi');
+# ƒe[ƒuƒ‹users‚Öƒf[ƒ^‚ğ“ü—Í
+insert into users(userId, userName, kana, nickName, age,  zip, address, tel, password)
+ values('kobe@denshi.net', '_ŒË@“dq', 'ƒRƒEƒx@ƒfƒ“ƒV', '‚±‚¤‚¿‚á‚ñ', '20', '6500002', '_ŒËs’†‰›‹æ–k–ì’¬1-1-8',
+ '078-242-0014','kobedenshi');
 
-# ãƒ†ãƒ¼ãƒ–ãƒ«Roomã¸ãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›
+# ƒe[ƒuƒ‹Room‚Öƒf[ƒ^‚ğ“ü—Í
 insert into Room(userId, zip, address, startPeriod, endPeriod, price, image)
- values('kobe@denshi.net', '1234567' , 'ç¥æˆ¸å¸‚', '2019-4-21', '2019-4-24', '2000', 'sampleRoom.jpg');
+ values('kobe@denshi.net', '1234567' , '_ŒËs‚¿‚ñ‚±’¬', '2019-4-21', '2019-4-24', '2000', 'sampleRoom.jpg');
 
-# ãƒ†ãƒ¼ãƒ–ãƒ«ParkingLotã¸ãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›
+# ƒe[ƒuƒ‹ParkingLot‚Öƒf[ƒ^‚ğ“ü—Í
 insert into ParkingLot(userId, zip, address, startPeriod, endPeriod, price, image)
- values('kobe@denshi.net', '1234567' , 'ç¥æˆ¸å¸‚', '2019-4-21', '2019-4-24', '1000', 'sampleParking.jpg');
+ values('kobe@denshi.net', '1234567' , '_ŒËs‚¿‚ñ‚±’¬', '2019-4-21', '2019-4-24', '1000', 'sampleParking.jpg');
 
-# ãƒ†ãƒ¼ãƒ–ãƒ«Gardenã¸ãƒ‡ãƒ¼ã‚¿ã‚’å…¥åŠ›
+# ƒe[ƒuƒ‹Garden‚Öƒf[ƒ^‚ğ“ü—Í
 insert into Garden(userId, zip, address, startPeriod, endPeriod, price, image, purpose)
- values('kobe@denshi.net', '1234567' , 'ç¥æˆ¸å¸‚', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg', 'ã‚ãŠã‹ï½');
+ values('kobe@denshi.net', '1234567' , '_ŒËs‚¿‚ñ‚±’¬', '2019-4-21', '2019-4-24', '1500', 'sampleGarden.jpg','‚ ‚ ‚ ');

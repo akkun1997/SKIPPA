@@ -22,7 +22,7 @@ $image = $_FILES['image']['name'];
 
 move_uploaded_file($_FILES['image']['tmp_name'],'./../images/'. $image);
 
-$image = h($image);
+//$image = h($image);
 $purpose = h($_POST['purpose']);
 
 
@@ -80,7 +80,7 @@ if(empty($purpose)){
 require_once __DIR__ . '/../classes/garden.php';
 $garden = new Garden();
 
-$result = $garden->gardenUp($userId,$zip,$address,$startPeriod,$endPeriod,$price,$purpose,$image);
+$result = $garden->gardenUp($userId,$zip,$address,$startPeriod,$endPeriod,$price,$image,$purpose);
 
 //登録に失敗した場合は、エラーメッセージをセッションに保存し、gardenEntry.phpに遷移する
 if($result !== ""){
@@ -109,7 +109,7 @@ $_SESSION['image'] = $image;
 	<tr><td>貸出期間</td><td><?= $startPeriod ?>~<?= $endPeriod ?></td></tr>
 	<tr><td>金額</td><td><?= $price ?></td></tr>
 	<tr><td>目的</td><td><?= $purpose ?></td></tr>
-	<tr><td>画像</td><td><?= $image ?></td></tr>
+	<tr><td>画像</td><td><?= '<img src="img.php?$image='.$image.'">' ?></td></tr>
 </table>
 
 <?php
