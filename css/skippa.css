@@ -1,4 +1,4 @@
-/* ページ全体を中央に表示（センタリング）するには、
+﻿/* ページ全体を中央に表示（センタリング）するには、
    ページ全体である<body>～</body>の中に<div>～</div>を入れ、
    その<div>～</div>を中央に表示する。
    次のbodyと#mainの2つの設定で実装される。
@@ -40,10 +40,38 @@ a:active{
 }
 
 /* ヘッダー部のナビゲーションメニューを横一列に表示する */
-.navi li {
+/*.navi li {
   display: inline;
   list-style-type: none;
   padding-right: 20px;
+}*/
+
+/*.navi li{
+  display: inline;
+  list-style-type: none;
+  padding-right: 20px;
+  background-image:url(../images/header.jpg);
+}*/
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+.nav{
+  margin:0 0 0 0;
+  padding:15px 30px 10px;
+  background-image:url(../images/header.jpg);
+  width: 100%;
+  min-width: 700px;
+}
+
+.nav li{
+  display: inline;
+  list-style-type: none;
+  text-align: start;
+  color: #000000;/*文字は白に*/
+  padding-right:25px;
 }
 
 /* トップ画面（index.php）の３つのジャンルを横一列に表示する */
