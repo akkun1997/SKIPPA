@@ -21,8 +21,10 @@
 			<?php
 				if($userName === "ゲスト"){
 					echo '<li><a href = "' . $login_php . '">ログイン</a></li>';
-				}else{
-					echo '<li><a href = "' .$mypage_php . '">マイページ</a></li>';
+				}elseif($nickName === ""){
+					echo '<li><a href = "' . $mypage_php . '">マイページ</a></li>';
+				}else{					
+					echo '<li><a href = "' . $mypage_php . '">' . $nickName . '</a></li>';
 					echo '<li><a href = "' . $logout_php .'">ログアウト</a></li>';
 				}
 			?>
