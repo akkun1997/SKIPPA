@@ -1,9 +1,11 @@
-﻿/* ページ全体を中央に表示（センタリング）するには、
+aa
+
+
+/* ページ全体を中央に表示（センタリング）するには、
    ページ全体である<body>～</body>の中に<div>～</div>を入れ、
    その<div>～</div>を中央に表示する。
    次のbodyと#mainの2つの設定で実装される。
 */
-
 
 /* body要素内の文字列をセンタリング */
 body {
@@ -39,30 +41,15 @@ a:active{
   text-decoration: none;
 }
 
-/* ヘッダー部のナビゲーションメニューを横一列に表示する */
-/*.navi li {
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
-}*/
-
-/*.navi li{
-  display: inline;
-  list-style-type: none;
-  padding-right: 20px;
-  background-image:url(../images/header.jpg);
-}*/
-
-/*ヘッダー、フッダーのレイアウト*/
-.nav{
-  margin:0 0 0 0;
-  padding:15px 30px 10px;
-  background-image:url(../images/header.jpg);
+/*ヘッダーのレイアウト*/
+.navi{
   width: 100%;
-  min-width: 700px;
+  margin:0 0 0 0;
+  padding:15px 0px 5px;
+  background-image:url(../images/header.png);
 }
 
-.nav li{
+.navi li{
   display: inline;
   list-style-type: none;
   text-align: start;
@@ -73,6 +60,51 @@ a:active{
 *{
   margin: 0px;
   padding: 0px;
+}
+
+/*フッダーのレイアウト*/
+.footer{
+  width: 100%;
+  margin:0 0 0 0;
+  padding:15px 0px 5px;
+  background-color: #adf5c6;
+}
+
+.footer li{
+  display: inline;
+  list-style-type: none;
+  text-align: start;
+  color: #000000;/*文字は黒に*/
+  padding-right:25px;
+}
+
+/*背景色*/
+.backcolor{
+  background-color: #EEEEEE;
+  max-width: 1520px;
+  overflow:hidden;
+}
+
+/*テーブルのレイアウト*/
+table{
+  border-collapse: separate;
+  border-spacing: 0px 5px;
+  margin: 0 auto;
+}
+td,th{
+  padding: 10px;
+}
+th{
+  background: #10a0e0;
+  color: #fff;
+}
+td{
+  background: #f1fafe;
+}
+
+/*見出しのレイアウト*/
+p{
+  font-size: 30px;
 }
 
 /* エラーメッセージの文字色を赤にする */
@@ -100,94 +132,126 @@ a:active{
   border:1px solid #CCCCCC;
 }
 
-/* リンクをボタンのように見せる
-   以下はbutton_image2クラスを持つリンク
-    カート内商品一覧画面（cart_list.php）の「注文する」リンク
-    注文内容確認画面（order_confirm.php）の「注文を確定する」リンク
-*/
-.button_image2 {
-  font-size:12px;
-  color:#ffffff;
-  background-color: orange;
-  border-radius:5px;
-  border: none;
+/*背景*/
+.back{
+  background:url(../images/backlogo.png);
+  
+  background-repeat: repeat;
+}
+/*テスト
+.top{
+  width: 2000px;
+  height: 500px;
+  background-image: url('../images/a.gif');
+  background-size: 2000px;
+  border: solid 2px;
+  text-shadow: white 0px 0px 2px;
+  font-size: 16px;
+ }
+
+ /* --- 全体のBOX定義 ---------------------------------------- */
+.box {
+  position   : relative;
+  max-width  : 2300px;
+  height     : 550px;
+  margin     : auto;
+  overflow   : hidden;
+ 
+}
+
+/* --- 背景の指定 ------------------------------------------- */
+.box .bgImg {
+  position   : absolute;
+  top        : 0;
+  left       : 0;
+  bottom     : 0;
+  right      : 0;
+  opacity    : 0;
+  z-index: 1;
+  animation  : bgAnime 40s infinite;   /* 4画像 × 各10s = 40s */
+}
+
+/* --- 段差で背景画像のアニメーションを実行 ----------------- */
+.box .src1 {
+  background-image : url('../images/a.gif');   /* 背景の画像を指定 */
+  background-size: cover;
+    background-position: 20% 40%;
+}
+.box .src2 {
+  background-image : url('../images/3.gif');   /* 背景の画像を指定 */
+  animation-delay  : 10s;
+  background-size: cover;
+    background-position: 20% 40%;
+}
+.box .src3 {
+  background-image : url('../images/2.gif');   /* 背景の画像を指定 */
+  animation-delay  : 20s;
+  background-size: cover;
+    background-position: 20% 40%;
+}
+.box .src4 {
+  background-image : url('../images/1.gif');   /* 背景の画像を指定 */
+  animation-delay  : 30s;
+  background-size: cover;
+    background-position: 20% 40%;
+}
+
+@keyframes bgAnime {
+   0% { opacity: 1; }
+   10% { opacity: 1; }
+  25% { opacity: 1; }
+  49% { opacity: 1; }
+  50% { opacity: 1; }
+}
+
+/* --- 前面の文字定義（サンプルのため変更してください） ----- */
+.box .boxString{
+  position   : absolute;
+  display    : inline-block;
+  padding    : 20px;
+  background : rgba(0, 127, 255, 0.7);       
+  color      : #fff;
+  top        : 50%;                               
+  left       : 50%;
+  transform  : translate(-50%,-50%);
+  z-index    : 11;
 }
 
 
-/* 以下はミニショップで利用したスタイル */
-
-/* テーブルを常に画面中心に配置 */
-table {
-  margin: 0px auto 20px;
+.bg-image {
+  background-image: url('../images/1.gif');
+  width: 1520px;
+  height: 620px;
+  background-size: cover;
 }
-
-/* テーブルの枠線を灰色の1pxの直線とし、1本にまとめる */
-table, th, td {
-  border: 1px solid #C0C0C0;
-  border-collapse: collapse;
-}
-
-/* セル内の上下の余白を3px、左右の余白を10pxに */
-th, td {
-  padding: 3px 10px 3px 10px;
-}
-
-/* セル内のデータを右詰め表示 */
-.td_right {
-  text-align: right;
-}
-
-/* セル内のデータをセンター表示 */
-.td_center {
-  text-align: center;
-}
-
-/* 商品のセルの幅を200pxとし、収まりきらない場合は折り返して表示する */
-.td_item_name {
-  width: 200px;
-  word-break: break-all;
-}
-
-/* makerのセルの幅を150pxとし、収まりきらない場合は折り返して表示する */
-.td_item_maker {
-  width: 150px;
-  word-break: break-all;
-}
-
-/* 画像データを縮小して表示 */
-.td_mini_img{
-  padding: 2px 1px 0;
-  width: 40px;
-  height: 40px;
-}
-/* 画像の大きさをセルのサイズにする */
-img.mini_img {
-  width: 100%;
+.bg-mask {
   height: 100%;
+  background: rgba(255,255,255,0.5);
 }
 
-.float img{
-  float: left;
-  padding-right: 1em;
+
+.btn {
+  position: relative;
+  top:30%;
+  display: inline-block;
+  text-decoration: none;
+  color: #FFF;
+  width: 220px;
+  height: 150px;
+  line-height: 150px;
+  border-radius: 50%;
+  text-align: center;
+  vertical-align: middle;
+  overflow: hidden;
+  background-image: -webkit-linear-gradient(45deg, #bacbf0 10%, #adf5c6 100%);    
+  background-image: linear-gradient(45deg, #bacbf0 10%, #adf5c6 100%);
+  transition: .4s;
+  z-index: 2;
 }
 
-/* 画像データのサイズを60%に ・・ detail.phpで使用*/
-img.detail_img {
-  width: 40%;
-  height: 40%;
-}
+.btn:hover{
+-webkit-transform: rotate(10deg);
+-ms-transform: rotate(10deg);
+transform: rotate(10deg);
 
-/* 数量の入力幅を35pxに ・・ detail.php、cartlist.phpで使用*/
-.quantity_number {
-  width: 35px;
-}
-
-/* 価格のセルの幅を80pxに ・・ orderhistory.phpで使用 */
-.td_item_price {
-  width: 80px;
-}
-
-/* 金額のセルの幅を120pxに ・・ orderhistory.phpで使用 */
-.td_item_total {
-  width: 120px;
 }
