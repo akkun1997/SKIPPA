@@ -135,16 +135,7 @@ p{
   
   background-repeat: repeat;
 }
-/*テスト
-.top{
-  width: 2000px;
-  height: 500px;
-  background-image: url('../images/a.gif');
-  background-size: 2000px;
-  border: solid 2px;
-  text-shadow: white 0px 0px 2px;
-  font-size: 16px;
- }
+
 
  /* --- 全体のBOX定義 ---------------------------------------- */
 .box {
